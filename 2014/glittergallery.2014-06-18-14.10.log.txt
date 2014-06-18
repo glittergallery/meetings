@@ -1,0 +1,210 @@
+14:10:22 <Emichan> #startmeeting Glitter Gallery Weekly Update
+14:10:22 <glitterfox> Meeting started Wed Jun 18 14:10:22 2014 UTC and is due to finish in 60 minutes.  The chair is Emichan. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:10:22 <glitterfox> Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.
+14:10:22 <glitterfox> The meeting name has been set to 'glitter_gallery_weekly_update'
+14:10:30 <banas> yay :)
+14:10:35 <Emichan> although we haven't actually met in a while! :)
+14:10:39 <Emichan> it works!
+14:10:41 <banas> #topic Meeting logs
+14:10:53 <banas> Quickly, let;s decide where to store logs?
+14:11:10 <rohitpaulk> what are our options?
+14:11:20 <banas> one is to put it up on github
+14:11:33 <banas> we have github pages, maybe we could store it on /meetings
+14:11:50 <Emichan> where are they currently stored?
+14:12:07 <banas> Emichan: my computer :P
+14:12:11 <Emichan> lol
+14:12:28 <Emichan> let's put it in github pages for now
+14:12:28 <rohitpaulk> @banas - You've given links to them somewhere else too... the fedora wiki I think
+14:12:52 <rohitpaulk> yh github pages seems fine
+14:12:59 <banas> I have? lol I don't remember. I'll look up and update it :)
+14:13:05 <rohitpaulk> :)
+14:13:19 <Emichan> banas, for the first meeting, you posted the logs - not minutes, though
+14:13:33 <banas> yeah it wasnt a meetbot generated one
+14:13:44 <Emichan> #action banas to upload meeting minutes to github pages
+14:13:45 <banas> rohitpaul you prolly meant the fpaste?
+14:13:51 <banas> !firstmeeting
+14:13:51 <glitterfox> firstmeeting is http://fpaste.org/98180/, banas
+14:14:00 <banas> these?
+14:14:27 <rohitpaulk> yh exactly :)
+14:14:27 <rohitpaulk> I was talking about the logs
+14:14:58 <banas> yeah, I'll put them to the github pages too, but let the formatting be non existent
+14:15:50 <banas> cool, onto next topic!
+14:15:54 <banas> #chair
+14:16:05 <banas> #chairs
+14:16:55 <Emichan> #topic status update - rohitpaulk
+14:17:50 <Emichan> rohitpaulk, (or rohitpaulphone) can you give us a quick status update? - what you're working on currently, if you're blocked by anything, etc
+14:18:01 <rohitpaulk> I'm working on the rugged integration now.
+14:18:07 <rohitpaulk> All the existing code has been moved over.
+14:18:23 <rohitpaulk> The file update action which we had problems with before - that's completed too.
+14:18:32 <rohitpaulk> Now I'm going to look into forking.
+14:19:03 <rohitpaulk> Nothing blocking my way, but I'm blocking Sarup's way as of now. There are a few routing changes that have to be done to make sure that the login pages show up properly
+14:19:29 <rohitpaulk> So yh. Forking, and login page changes - that's what I'm on now. Once that's done, tests for both.
+14:19:47 <Emichan> great!
+14:19:50 <banas> rohitpaul: that's cool, we can just merge them when you're ready with them. we have at least the email support for now :)
+14:20:10 <rohitpaulk> Yh :)
+14:20:38 <Emichan> for login - do all the methods currently work? external providers/openid/username+pass ? or is that in progress?
+14:21:28 <Emichan> #info rohitpaulk status: Forking, login page changes, and tests
+14:22:22 <rohitpaulphone> All the methods do work.
+14:22:33 <Emichan> great!
+14:22:58 <rohitpaulphone> not on local though, coz the callback URLs have to be publicly accessible :)
+14:23:05 <Emichan> #topic status update - banas
+14:23:13 <Emichan> banas - it's your turn :)
+14:24:01 <banas> I'm done with major part of the redesign, you can test it on glittery-banas as usual :) now I'll soon move to providing project settings and fix more page UI as I progress :)
+14:24:48 <Emichan> banas, and you're waiting on login page changes?
+14:25:08 <banas> yeah, but it isn;t critical.
+14:25:16 <banas> currently, theres email pass that works
+14:25:18 <banas> and a signup page
+14:25:28 <banas> just that people have to click few extra buttons to get there
+14:25:59 <banas> and the 3rd party works with rohitpaul's PR, but it needs some routing improvements for the new buttons
+14:26:30 * banas wished OpenID's standard orange was not so orange, it looks out of place
+14:27:42 <rohitpaulk_> @banas - the openID login page has a default styling. Were you able to redo that?
+14:28:31 <banas> I was also hoping to try a new set of fonts, but the current ones arent bad so I'll do that when I'm more free :D
+14:28:45 <banas> rohitpaulk_:  the page from your PR?
+14:29:31 <rohitpaulk_> Not exactly - This omniauth-openID creates a page of it's own
+14:29:44 <rohitpaulk_> where you have to enter your OpenID login.
+14:30:03 <banas> it's the blank page with just a textbox, right?
+14:30:16 <banas> I saw a page like that, but I haven't styled it yet
+14:30:32 <rohitpaulk_> I did find some styling problems there... As in, if I'd just click through - it'd have our original background. And when i refresh that page, the styles change to a default grey background
+14:31:01 <rohitpaulk_> Yh I'm guessing it's a turbolinks issues... Let me know when you get there, I think that this will need a bit of investigation
+14:31:11 <rohitpaulk_> issue*
+14:31:46 <banas> Yeah, for openid, what I wanted to do is to make the openid login field appear on the same homepage (replacing the email/pass areaq) when the user clicks the button
+14:31:58 <banas> so I'll work on it when I involve some js
+14:32:13 <rohitpaulk_> Aah that's a good idea.
+14:33:44 <banas> yep :)
+14:34:51 <Emichan> #info banas status: redesign mostly done, project settings are next, waiting on login page changes
+14:35:08 <Emichan> #topic deployment
+14:35:34 <banas> Emichan: the initial release deployment, right?
+14:35:35 <Emichan> banas, have you made any progress on the quickstart? i sent you an email earlier, dunno if you've gotten a chance to read it yet
+14:35:59 <banas> yeh I just noticed you sent me an email, I'll look at it after the meeting :) thanks for the hints!
+14:36:06 <Emichan> #link https://www.openshift.com/promotions/ebook
+14:36:23 <Emichan> since you're working on openshift stuff ^^^ that's a link to a free openshift ebook
+14:36:33 <Emichan> you should check it out - it might help!
+14:36:57 <banas> alright, thanks for the link!
+14:37:24 <Emichan> #topic Initial release/fedora design team deployment
+14:37:30 <Emichan> (to be more specific ;)
+14:37:38 <banas> haha, yeah
+14:37:52 <banas> alright, so just to fill rohitpaul in
+14:38:06 <banas> currently, design team is working on the branding for fedora.next
+14:38:13 <banas> websites, logos, etc
+14:38:36 <banas> as soon as we can, it would be cool to release an early deployment for them to be able to use
+14:39:03 <rohitpaulk_> yh that sounds good :)
+14:39:05 <banas> so they can report/fix bugs, and we're working on a track that solves the problems that need most attention
+14:39:25 <rohitpaulk_> though... there's a lot of work that we need to get done before something like that. What timeframe are we expecting?
+14:39:29 <banas> Emichan: so which features do you think make most sense?
+14:41:17 <Emichan> The basics, obviously: creating a project, adding files to it, and commenting
+14:41:28 <Emichan> which should all work unless one of you has broken it ;)
+14:41:40 <rohitpaulphone> Not yet :D
+14:41:43 <Emichan> authentication with openid is a definite requirement
+14:42:06 <banas> yeh, so that's something we currently have. but, the commenting needs notifications IMO, without which its pretty unusable
+14:42:09 <Emichan> forking is not absolutely necessary, but i'd really like to see it working
+14:43:30 <Emichan> yes, commenting without notifications isn't great - at least notifications for the project owner. but i'm not sure we want to be blocked on that necessarily.
+14:44:47 <banas> Emichan: yep. I propose let paul finish what he is currently working on, and we could work out some adjustments in the schedule to facilitate the release. what do you think?
+14:44:58 <banas> I'll look at the commenting, I don't mind deviating a little
+14:45:19 <banas> I think he got disconnected though
+14:45:33 <rohitpaulphone> I'm on phone.
+14:45:41 <banas> oh cool :)
+14:46:11 <rohitpaulphone> We we planning for notifications in the next iteration right?
+14:46:11 <Emichan> i think that's fine. What about the redesign, banas? will you be able to finish it up for the release?
+14:46:29 <rohitpaulphone> Oh wait that was the issue tracker...
+14:46:57 <Emichan> i think we can reorder the notifications and the issue tracker.
+14:47:13 <rohitpaulphone> Yh that makes sense to me
+14:47:19 <banas> yeah i think the issue tracker came first according to the plan, but i dont thinkit will mess up if we switch
+14:47:24 <banas> Emichan: yep i will
+14:48:17 <banas> Emichan: most of the elements are there, it's just plugging in at the right places.
+14:48:49 <Emichan> banas, alright sounds good
+14:50:14 <Emichan> #info release process: when it's ready, and all the tests are passing, we'll tag the repo at 0.1, and create a development branch for further work. The master will stay at 0.1 until we're ready for the next release
+14:50:27 <Emichan> make sense?
+14:50:46 <banas> yeah, agreed
+14:51:44 <Emichan> AndChat|554609, are you paul? in disguise?
+14:51:59 <AndChat|554609> Haha yes I am :P
+14:52:13 <banas> lol
+14:52:17 <Emichan> #info AndChat|554609 is really paul
+14:52:29 <banas> :D
+14:52:57 <AndChat|554609> Man I have no idea how to change my nick in this thing. So and chat 554609 it is
+14:53:09 <Emichan> no worries :)
+14:53:22 <banas> haha, ok
+14:53:25 <AndChat|554609> Did you get my multiple uploads msg?
+14:53:33 <Emichan> no
+14:54:10 <AndChat|554609> OK I was saying that multiple uploads would be a good feature to have in 0.1
+14:54:24 <Emichan> multiple files at a time? makes sense
+14:54:27 <banas> for the project images?
+14:54:33 <Emichan> do you have space in the schedule for that?
+14:55:04 <AndChat|554609> Coz a person starting a project just wants to dump his current work... And uploading one by one is a PITA
+14:55:21 <banas> if it's project images, I'm already on it
+14:55:25 <AndChat|554609> for the project images, yes.
+14:56:03 <banas> but I think what people would love most would be a sparkleshare connect, although I have no idea what we need to support it
+14:56:04 <AndChat|554609> It'd involve JS right? Cool let me know if you need any help
+14:56:48 <Emichan> yeah, sparkleshare integration would be great
+14:56:58 <banas> AndChat|554609: i will!
+14:57:25 <banas> Emichan: when you and mizmo presented at LGM, that prototype had a sparleshare connection?
+14:57:38 <Emichan> banas, not at all
+14:58:04 <Emichan> banas, that prototype barely did anything ;)
+14:58:42 <AndChat|554609> I don't expect the integration to be easy. If we really want it in 0.1, we should start fast
+14:58:43 <banas> ah ok. then maybe we can release PRs for 0.2 and sparkleshare for 0.3
+14:59:13 <banas> AndChat|554609: I'm against sparkleshare for 0.1. we most likely wont have the time
+14:59:27 <Emichan> #agreed
+14:59:37 <banas> but we could actually do sparkleshare for 0.2
+15:00:01 <banas> and do PRs for 0.3
+15:00:36 <AndChat|554609> We'll see if we get RFEs for either
+15:00:48 <AndChat|554609> And then decide?
+15:00:59 <banas> AndChat|554609: yeah, good idea :)
+15:01:12 <Emichan> we don't really need rfe's for those, I think they're clearly features we want
+15:01:19 <Emichan> i'd say sparkleshare first, then PRs
+15:01:19 <banas> mizmo and ryan both said sparkleshare first
+15:01:23 <banas> yep
+15:01:39 <AndChat|554609> Ok :)
+15:01:40 <banas> AndChat|554609: it will be a smoother learning curve for you as well, IMO
+15:02:01 <AndChat|554609> True
+15:02:25 <banas> design team doesn;t really do as much forking and then PR-ing,, they tend to just work on multiple ideas simultaneously from what I've observed
+15:02:54 <Emichan> it'd also be good to try to allow importing an existing repo (i.e. hosted on github) for 0.2 or 0.3
+15:03:25 <Emichan> it's common to build on other people's work for the wallpaper at least
+15:03:33 <Emichan> forking will make that easier
+15:03:45 <Emichan> i'm not sure PRs would be used all that much even so
+15:03:52 <banas> Emichan: yeah
+15:04:25 <banas> more likely, it's going to be "hey, i made these cool patterns", and somebody will fork it and improve and show links to their work
+15:05:07 <Emichan> yep
+15:05:24 <banas> Although, AndChat|554609 you can read about what it takes to get sparkleshare itegrated, see if you're comfortable and then we can decide
+15:05:47 <AndChat|554609> Yep I'll have a look
+15:05:49 <banas> I'll introduce you to Hyle if you want, he said he'd help but then I felt we werent too ready to adopt it at that point
+15:06:01 <banas> s/Hyle/Hylke
+15:06:29 <Emichan> first round of SS integration will be adding a SparkleShare invite button
+15:06:49 <Emichan> i'm honestly not sure how hard that would be, but i wouldn't expect it to be super difficult
+15:07:25 <Emichan> #info #link https://github.com/hbons/SparkleShare/wiki/Invites
+15:07:31 <banas> Emichan: I can't be sure, but I think this is related to supporting git pushes from the terminal. ssh keys, all of that stuff
+15:07:55 <Emichan> not necessarily
+15:08:06 <Emichan> if you're using ss - it creates and manages an ssh key for you
+15:08:12 <Emichan> which might be sufficient
+15:09:02 <banas> oh yeah. it says so on the wiki
+15:09:08 <Emichan> although, we'll still have to deal with them on the server
+15:09:30 <AndChat|554609> On the client side yes. But won't we still have to implement on the server?
+15:09:35 <AndChat|554609> Yh
+15:10:08 <Emichan> well, we can research it and see how difficult it will be. if it needs to wait, then so be it.
+15:10:21 <banas> yep
+15:11:08 <banas> #action AndChat|554609 (Paul) look up what needs to be done with sparkleshare and decide if we can try implementing for 0.2
+15:11:22 <AndChat|554609> :)
+15:12:17 <banas> something into the future, when I'm at flock, I'll talk to the waartaa folk and see if they can help us with a widget or something that can help us with an irc client within the app
+15:12:42 <AndChat|554609> That'd be cool
+15:17:55 <banas> Emichan: we forgot the most important topic!
+15:18:08 <Emichan> banas, what?
+15:18:08 <glitterfox> Somebody said banas, what are you trying to do to glitterfox, besides confuse him, Emichan
+15:18:28 <banas> #topic Midterms
+15:18:30 <banas> :P
+15:18:32 <Emichan> lol
+15:18:40 <Emichan> true
+15:18:55 <banas> glitterfox: you're confusing me now
+15:18:55 <glitterfox> I have no idea.
+15:19:55 <Emichan> #info midterm evaluations start next Monday
+15:21:17 <Emichan> AndChat|554609/paul, since this'll be your first time - as your mentor, I'll evaluate your performance, and assign pass/fail designation to your work. this affects whether or not you get the next round of payments
+15:21:43 <Emichan> And you'll evaluate me as a mentor, although it doesn't affect whether or not I get paid - it's just feedback for the program to use
+15:21:57 <Emichan> #info evaluations are due next Friday 6/27
+15:22:07 <AndChat|554609> Okay. Anything else I need to do?
+15:22:18 <Emichan> just fill out the evaluation on time
+15:22:33 <AndChat|554609> Okay :)
+15:22:37 <Emichan> I won't see your evaluation, so feel free to be candid
+15:22:38 <Emichan> :)
+15:23:10 <AndChat|554609> :)
+15:23:34 <Emichan> Alright, so any other topics?
+15:24:08 <banas> Emichan: I think we're done discussing most of the stuff
+15:24:17 <AndChat|554609> Nothing that I can think of right now
+15:24:20 <Emichan> alrighty then
+15:24:23 <Emichan> #endmeeting

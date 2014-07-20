@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#glittergallery log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">14:15:17</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">Weekly Update July 16 2014</span>
+<a name="l-2"></a><span class="tm">14:15:17</span><span class="nk"> &lt;glitterfox`&gt;</span> Meeting started Wed Jul 16 14:15:17 2014 UTC and is due to finish in 60 minutes.  The chair is Emichan. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">14:15:17</span><span class="nk"> &lt;glitterfox`&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.
+<a name="l-4"></a><span class="tm">14:15:17</span><span class="nk"> &lt;glitterfox`&gt;</span> The meeting name has been set to 'weekly_update_july_16_2014'
+<a name="l-5"></a><span class="tm">14:15:32</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#info </span><span class="cmdline">meetbot commands: http://meetbot.debian.net/Manual.html#user-reference</span>
+<a name="l-6"></a><span class="tm">14:15:52</span><span class="nk"> &lt;Emichan&gt;</span> <span class="topic">#topic </span><span class="topicline">Status updates</span>
+<a name="l-7"></a><span class="tm">14:16:08</span><span class="nk"> &lt;Emichan&gt;</span> who's up first?
+<a name="l-8"></a><span class="tm">14:16:20</span><span class="nk"> &lt;rohitpaulk&gt;</span> Shall I?
+<a name="l-9"></a><span class="tm">14:16:24</span><span class="nk"> &lt;banas&gt;</span> sure
+<a name="l-10"></a><span class="tm">14:16:51</span><span class="nk"> &lt;rohitpaulk&gt;</span> We got done with the notifications, I'd sent you the discussion and the PR - here's the blog post too http://rohitpaulk.roon.io/glittergallery-has-notifications-now
+<a name="l-11"></a><span class="tm">14:16:54</span><span class="nk"> &lt;rohitpaulk&gt;</span> I'll send that out to the design team tonight
+<a name="l-12"></a><span class="tm">14:17:01</span><span class="nk"> &lt;rohitpaulk&gt;</span> (mailing list)
+<a name="l-13"></a><span class="tm">14:17:39</span><span class="nk"> &lt;rohitpaulk&gt;</span> I haven't pushed up any changes, but I've been working on the model/schema for an issue tracker on my local
+<a name="l-14"></a><span class="tm">14:18:31</span><span class="nk"> &lt;rohitpaulk&gt;</span> Other than that - the login problems still remain, I'm still going to need some time on that :)
+<a name="l-15"></a><span class="tm">14:18:58</span><span class="nk"> &lt;rohitpaulk&gt;</span> Umm yh, that's it for now.
+<a name="l-16"></a><span class="tm">14:19:27</span><span class="nk"> &lt;banas&gt;</span> great, should I go next?
+<a name="l-17"></a><span class="tm">14:19:46</span><span class="nk"> &lt;rohitpaulk&gt;</span> go on :)
+<a name="l-18"></a><span class="tm">14:20:42</span><span class="nk"> &lt;banas&gt;</span> First, I cleaned up some problems I wasn't able to do with just css using js. Probably not very noticeable, but stuff like making the toolbar active based on what page you're on
+<a name="l-19"></a><span class="tm">14:21:38</span><span class="nk"> &lt;banas&gt;</span> I worked on slideshows for the project images, but it's a WIP for now - the thing works, but for some reason the image won't display within the container. I _think_ I may be able to fix this tonight
+<a name="l-20"></a><span class="tm">14:22:34</span><span class="nk"> &lt;banas&gt;</span> finally, just like rohitpaulk, i worked on a front end for the issue tracker, I'll send in a sample soon :)
+<a name="l-21"></a><span class="tm">14:23:13</span><span class="nk"> &lt;banas&gt;</span> although rohitpaulk, if you could just give me a gist of what the issue tracker is like, it would be useful. maybe after the meeting on email?
+<a name="l-22"></a><span class="tm">14:23:17</span><span class="nk"> &lt;rohitpaulk&gt;</span> Cool! :) The toolbar you're talking about are the ones on the right?
+<a name="l-23"></a><span class="tm">14:23:33</span><span class="nk"> &lt;banas&gt;</span> no, the ones on the top of projects/userpafes
+<a name="l-24"></a><span class="tm">14:23:47</span><span class="nk"> &lt;rohitpaulk&gt;</span> Oh, okay :) Yh we'll have a chat over phone soon
+<a name="l-25"></a><span class="tm">14:23:56</span><span class="nk"> &lt;banas&gt;</span> i had put them on a view partial, so i wasnt able to set the .active element properly
+<a name="l-26"></a><span class="tm">14:24:30</span><span class="nk"> &lt;banas&gt;</span> now it works fine.
+<a name="l-27"></a><span class="tm">14:24:49</span><span class="nk"> &lt;rohitpaulk&gt;</span> Aah :)
+<a name="l-28"></a><span class="tm">14:25:56</span><span class="nk"> &lt;banas&gt;</span> I actually spent an entire day trying to figure what could be wrong with the login, but couldn't figure anything :/
+<a name="l-29"></a><span class="tm">14:26:41</span><span class="nk"> &lt;rohitpaulk&gt;</span> Same here. But there's something extremely simple that I haven't tried. Rolling back to the previous version. In retrospect it looks silly, but I just thought of it yesterday :/
+<a name="l-30"></a><span class="tm">14:26:56</span><span class="nk"> &lt;rohitpaulk&gt;</span> I'll try it tonight/tomorrow :)
+<a name="l-31"></a><span class="tm">14:27:05</span><span class="nk"> &lt;banas&gt;</span> lol, yeh I didn't either. do update me!
+<a name="l-32"></a><span class="tm">14:27:36</span><span class="nk"> &lt;rohitpaulk&gt;</span> The bugs that are hardest to find are usually the silliest mistakes. Waiting to find out what went wrong :D
+<a name="l-33"></a><span class="tm">14:27:37</span><span class="nk"> &lt;rohitpaulk&gt;</span> sure
+<a name="l-34"></a><span class="tm">14:27:46</span><span class="nk"> &lt;banas&gt;</span> :D
+<a name="l-35"></a><span class="tm">14:28:37</span><span class="nk"> &lt;Emichan&gt;</span> cool - so actions:
+<a name="l-36"></a><span class="tm">14:28:52</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">rohitpaulk update mailing list about blog post</span>
+<a name="l-37"></a><span class="tm">14:29:07</span><span class="nk"> &lt;banas&gt;</span> <span class="cmd">#action </span><span class="cmdline">banas write a blog post (been long!)</span>
+<a name="l-38"></a><span class="tm">14:29:10</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">rohitpaulk send banas info about issue tracker</span>
+<a name="l-39"></a><span class="tm">14:29:30</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">rohitpaulk continue to debug login issues</span>
+<a name="l-40"></a><span class="tm">14:29:48</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">banas debug slideshow</span>
+<a name="l-41"></a><span class="tm">14:29:55</span><span class="nk"> &lt;Emichan&gt;</span> anything else?
+<a name="l-42"></a><span class="tm">14:30:13</span><span class="nk"> &lt;banas&gt;</span> yes, I think that's all.
+<a name="l-43"></a><span class="tm">14:30:34</span><span class="nk"> &lt;rohitpaulk&gt;</span> @banas - is the notifications UI up yet?
+<a name="l-44"></a><span class="tm">14:31:17</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">rohitpaulk:</span> nope, not yet :( I couldn't manage time. I'll do it by Sunday
+<a name="l-45"></a><span class="tm">14:31:27</span><span class="nk"> &lt;rohitpaulk&gt;</span> Cool! :)
+<a name="l-46"></a><span class="tm">14:32:14</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">Emichan:</span> if you could just set up the glittergallery.net ur
+<a name="l-47"></a><span class="tm">14:32:49</span><span class="nk"> &lt;banas&gt;</span> I could push a quick landing page too
+<a name="l-48"></a><span class="tm">14:32:57</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">Emichan edit glitter gallery dns to point to glittergallery.github.io</span>
+<a name="l-49"></a><span class="tm">14:34:03</span><span class="nk"> &lt;banas&gt;</span> yep, thank you :)
+<a name="l-50"></a><span class="tm">14:35:53</span><span class="nk"> &lt;Emichan&gt;</span> <span class="topic">#topic </span><span class="topicline">schedule</span>
+<a name="l-51"></a><span class="tm">14:36:18</span><span class="nk"> &lt;Emichan&gt;</span> okay, one thing I just wanted to mention is that there's less than four weeks left to the suggested pencils down date
+<a name="l-52"></a><span class="tm">14:36:27</span><span class="nk"> &lt;Emichan&gt;</span> which is really not much time
+<a name="l-53"></a><span class="tm">14:36:59</span><span class="nk"> &lt;Emichan&gt;</span> so, just a quick self evaluation from each of you - are you on schedule, behind schedule or ahead of schedule?
+<a name="l-54"></a><span class="tm">14:38:04</span><span class="nk"> &lt;rohitpaulk&gt;</span> I'm behind schedule. I haven't sent in the tests for the notifications, and there is stuff that could've been done better. I'm a bit busy till 23rd (moving back to college), but I'll put in more time after that and make up.
+<a name="l-55"></a><span class="tm">14:38:10</span><span class="nk"> &lt;banas&gt;</span> I'm behing schedule. But the problem with me is that I have various unfinished submodules and if things work fine it'll be normal in the enxt few days
+<a name="l-56"></a><span class="tm">14:38:57</span><span class="nk"> &lt;Emichan&gt;</span> alright - rohitpaulk, besides tests for notifications, what else from your proposal is left to do?
+<a name="l-57"></a><span class="tm">14:39:27</span><span class="nk"> &lt;Emichan&gt;</span> (I just want to make sure we're prioritizing, so if things have to be dropped, they're the less important things :) )
+<a name="l-58"></a><span class="tm">14:39:42</span><span class="nk"> &lt;banas&gt;</span> same here, my classes start on 23rd and I'm in a similar situation, but between 23rd and 5th, I hope to be able to spend quality time and speed things up
+<a name="l-59"></a><span class="tm">14:40:52</span><span class="nk"> &lt;rohitpaulk&gt;</span> The only thing i recall 'dropping' is stars on projects,
+<a name="l-60"></a><span class="tm">14:41:05</span><span class="nk"> &lt;rohitpaulk&gt;</span> but I'm implemented following projects :)
+<a name="l-61"></a><span class="tm">14:41:07</span><span class="nk"> &lt;rohitpaulk&gt;</span> i've*
+<a name="l-62"></a><span class="tm">14:41:37</span><span class="nk"> &lt;rohitpaulk&gt;</span> We swapped iteration 3 and 4, by the way
+<a name="l-63"></a><span class="tm">14:44:28</span><span class="nk"> &lt;banas&gt;</span> yup, for me, I've completely ignored glitterposts for now. everything else is around 70% and should be on schedule by the time august starts - except for the quickstart (unpredictable)
+<a name="l-64"></a><span class="tm">14:45:02</span><span class="nk"> &lt;rohitpaulk&gt;</span> What's the issue with the quickstart? I could help there.
+<a name="l-65"></a><span class="tm">14:46:06</span><span class="nk"> &lt;banas&gt;</span> same as last time - I couldn't understand much of what was wrong. Maybe if you're free after dinner, we'll work on it together?
+<a name="l-66"></a><span class="tm">14:46:18</span><span class="nk"> &lt;rohitpaulk&gt;</span> Sure :)
+<a name="l-67"></a><span class="tm">14:46:39</span><span class="nk"> &lt;rohitpaulk&gt;</span> Aah there is one more thing I left out - This isn't mentioned in the proposal, but i did say that I'd make the repos directory configurable, haven't done that yet
+<a name="l-68"></a><span class="tm">14:47:05</span><span class="nk"> &lt;banas&gt;</span> configurable = the renaming you mean?
+<a name="l-69"></a><span class="tm">14:47:18</span><span class="nk"> &lt;rohitpaulk&gt;</span> I thought it wasn't a priority because it isn't exactly causing us problems - but it is now. My Travis builds are failing, because a "../data" directory doesn't exists
+<a name="l-70"></a><span class="tm">14:47:28</span><span class="nk"> &lt;rohitpaulk&gt;</span> Yes. Like it's public/data now
+<a name="l-71"></a><span class="tm">14:47:40</span><span class="nk"> &lt;rohitpaulk&gt;</span> but we should be able to change that :)
+<a name="l-72"></a><span class="tm">14:47:41</span><span class="nk"> &lt;Emichan&gt;</span> yeah, that's going to be a nice thing to have for different environments
+<a name="l-73"></a><span class="tm">14:47:48</span><span class="nk"> &lt;rohitpaulk&gt;</span> exist*
+<a name="l-74"></a><span class="tm">14:48:02</span><span class="nk"> &lt;banas&gt;</span> oh yes, that's useful
+<a name="l-75"></a><span class="tm">14:48:15</span><span class="nk"> &lt;rohitpaulk&gt;</span> :)
+<a name="l-76"></a><span class="tm">14:48:29</span><span class="nk"> &lt;rohitpaulk&gt;</span> I was experimenting with a docker image last week
+<a name="l-77"></a><span class="tm">14:48:56</span><span class="nk"> &lt;Emichan&gt;</span> oh, that'd be a really nice thing to have
+<a name="l-78"></a><span class="tm">14:49:02</span><span class="nk"> &lt;rohitpaulk&gt;</span> Seems pretty straightforward, I just haven't worked out how to manage the database persistence. As of now - if you push new code, the whole database gets washed out.
+<a name="l-79"></a><span class="tm">14:49:27</span><span class="nk"> &lt;rohitpaulk&gt;</span> I read that OpenShift is experimenting with Docker already, so thought I'd give it a try :)
+<a name="l-80"></a><span class="tm">14:50:10</span><span class="nk"> &lt;Emichan&gt;</span> yep, the whole gearD effort
+<a name="l-81"></a><span class="tm">14:50:49</span><span class="nk"> &lt;rohitpaulk&gt;</span> exactly :) Is that only changing internals, or does it affect the development scenario too? I really couldn't make out much from the information online
+<a name="l-82"></a><span class="tm">14:51:59</span><span class="nk"> &lt;Emichan&gt;</span> heh, no one's really sure yet ;)
+<a name="l-83"></a><span class="tm">14:54:14</span><span class="nk"> &lt;rohitpaulk&gt;</span> aah ok :)
+<a name="l-84"></a><span class="tm">14:54:45</span><span class="nk"> &lt;Emichan&gt;</span> docker is totally the cool new thing though, and it'd be great to have another easy way for people to install GG
+<a name="l-85"></a><span class="tm">14:54:52</span><span class="nk"> &lt;rohitpaulk&gt;</span> yh :)
+<a name="l-86"></a><span class="tm">14:55:16</span><span class="nk"> &lt;rohitpaulk&gt;</span> Okay the power is out here, laptop will die anytime - I'll be on phone. :)
+<a name="l-87"></a><span class="tm">14:55:39</span><span class="nk"> &lt;Emichan&gt;</span> okay
+<a name="l-88"></a><span class="tm">14:55:45</span><span class="nk"> &lt;Emichan&gt;</span> we should wrap up anyway
+<a name="l-89"></a><span class="tm">14:56:44</span><span class="nk"> &lt;banas&gt;</span> yep, most of the stuff is discussed :)
+<a name="l-90"></a><span class="tm">14:56:50</span><span class="nk"> &lt;Emichan&gt;</span> just keep an eye on the time remaining in the program, and try to prioritize your work - anything that's taking a really long time to figure out consider dropping for the time being and moving on, then come back to it if you have time.
+<a name="l-91"></a><span class="tm">14:57:07</span><span class="nk"> &lt;rohitpaulphone&gt;</span> Sure
+<a name="l-92"></a><span class="tm">14:57:21</span><span class="nk"> &lt;Emichan&gt;</span> anyone have anything else before we end it?
+<a name="l-93"></a><span class="tm">14:57:22</span><span class="nk"> &lt;banas&gt;</span> yes, we will :)
+<a name="l-94"></a><span class="tm">14:58:00</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">rohitpaulphone:</span> what time do we meet?
+<a name="l-95"></a><span class="tm">14:58:02</span><span class="nk"> &lt;Emichan&gt;</span> ending in 3...
+<a name="l-96"></a><span class="tm">14:58:10</span><span class="nk"> &lt;Emichan&gt;</span> ... 2 ...
+<a name="l-97"></a><span class="tm">14:58:18</span><span class="nk"> &lt;Emichan&gt;</span> ... 1 ...
+<a name="l-98"></a><span class="tm">14:58:22</span><span class="nk"> &lt;banas&gt;</span> 0.5 :P
+<a name="l-99"></a><span class="tm">14:58:23</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

@@ -1,0 +1,99 @@
+14:15:17 <Emichan> #startmeeting Weekly Update July 16 2014
+14:15:17 <glitterfox`> Meeting started Wed Jul 16 14:15:17 2014 UTC and is due to finish in 60 minutes.  The chair is Emichan. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:15:17 <glitterfox`> Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.
+14:15:17 <glitterfox`> The meeting name has been set to 'weekly_update_july_16_2014'
+14:15:32 <Emichan> #info meetbot commands: http://meetbot.debian.net/Manual.html#user-reference
+14:15:52 <Emichan> #topic Status updates
+14:16:08 <Emichan> who's up first?
+14:16:20 <rohitpaulk> Shall I?
+14:16:24 <banas> sure
+14:16:51 <rohitpaulk> We got done with the notifications, I'd sent you the discussion and the PR - here's the blog post too http://rohitpaulk.roon.io/glittergallery-has-notifications-now
+14:16:54 <rohitpaulk> I'll send that out to the design team tonight
+14:17:01 <rohitpaulk> (mailing list)
+14:17:39 <rohitpaulk> I haven't pushed up any changes, but I've been working on the model/schema for an issue tracker on my local
+14:18:31 <rohitpaulk> Other than that - the login problems still remain, I'm still going to need some time on that :)
+14:18:58 <rohitpaulk> Umm yh, that's it for now.
+14:19:27 <banas> great, should I go next?
+14:19:46 <rohitpaulk> go on :)
+14:20:42 <banas> First, I cleaned up some problems I wasn't able to do with just css using js. Probably not very noticeable, but stuff like making the toolbar active based on what page you're on
+14:21:38 <banas> I worked on slideshows for the project images, but it's a WIP for now - the thing works, but for some reason the image won't display within the container. I _think_ I may be able to fix this tonight
+14:22:34 <banas> finally, just like rohitpaulk, i worked on a front end for the issue tracker, I'll send in a sample soon :)
+14:23:13 <banas> although rohitpaulk, if you could just give me a gist of what the issue tracker is like, it would be useful. maybe after the meeting on email?
+14:23:17 <rohitpaulk> Cool! :) The toolbar you're talking about are the ones on the right?
+14:23:33 <banas> no, the ones on the top of projects/userpafes
+14:23:47 <rohitpaulk> Oh, okay :) Yh we'll have a chat over phone soon
+14:23:56 <banas> i had put them on a view partial, so i wasnt able to set the .active element properly
+14:24:30 <banas> now it works fine.
+14:24:49 <rohitpaulk> Aah :)
+14:25:56 <banas> I actually spent an entire day trying to figure what could be wrong with the login, but couldn't figure anything :/
+14:26:41 <rohitpaulk> Same here. But there's something extremely simple that I haven't tried. Rolling back to the previous version. In retrospect it looks silly, but I just thought of it yesterday :/
+14:26:56 <rohitpaulk> I'll try it tonight/tomorrow :)
+14:27:05 <banas> lol, yeh I didn't either. do update me!
+14:27:36 <rohitpaulk> The bugs that are hardest to find are usually the silliest mistakes. Waiting to find out what went wrong :D
+14:27:37 <rohitpaulk> sure
+14:27:46 <banas> :D
+14:28:37 <Emichan> cool - so actions:
+14:28:52 <Emichan> #action rohitpaulk update mailing list about blog post
+14:29:07 <banas> #action banas write a blog post (been long!)
+14:29:10 <Emichan> #action rohitpaulk send banas info about issue tracker
+14:29:30 <Emichan> #action rohitpaulk continue to debug login issues
+14:29:48 <Emichan> #action banas debug slideshow
+14:29:55 <Emichan> anything else?
+14:30:13 <banas> yes, I think that's all.
+14:30:34 <rohitpaulk> @banas - is the notifications UI up yet?
+14:31:17 <banas> rohitpaulk: nope, not yet :( I couldn't manage time. I'll do it by Sunday
+14:31:27 <rohitpaulk> Cool! :)
+14:32:14 <banas> Emichan: if you could just set up the glittergallery.net ur
+14:32:49 <banas> I could push a quick landing page too
+14:32:57 <Emichan> #action Emichan edit glitter gallery dns to point to glittergallery.github.io
+14:34:03 <banas> yep, thank you :)
+14:35:53 <Emichan> #topic schedule
+14:36:18 <Emichan> okay, one thing I just wanted to mention is that there's less than four weeks left to the suggested pencils down date
+14:36:27 <Emichan> which is really not much time
+14:36:59 <Emichan> so, just a quick self evaluation from each of you - are you on schedule, behind schedule or ahead of schedule?
+14:38:04 <rohitpaulk> I'm behind schedule. I haven't sent in the tests for the notifications, and there is stuff that could've been done better. I'm a bit busy till 23rd (moving back to college), but I'll put in more time after that and make up.
+14:38:10 <banas> I'm behing schedule. But the problem with me is that I have various unfinished submodules and if things work fine it'll be normal in the enxt few days
+14:38:57 <Emichan> alright - rohitpaulk, besides tests for notifications, what else from your proposal is left to do?
+14:39:27 <Emichan> (I just want to make sure we're prioritizing, so if things have to be dropped, they're the less important things :) )
+14:39:42 <banas> same here, my classes start on 23rd and I'm in a similar situation, but between 23rd and 5th, I hope to be able to spend quality time and speed things up
+14:40:52 <rohitpaulk> The only thing i recall 'dropping' is stars on projects,
+14:41:05 <rohitpaulk> but I'm implemented following projects :)
+14:41:07 <rohitpaulk> i've*
+14:41:37 <rohitpaulk> We swapped iteration 3 and 4, by the way
+14:44:28 <banas> yup, for me, I've completely ignored glitterposts for now. everything else is around 70% and should be on schedule by the time august starts - except for the quickstart (unpredictable)
+14:45:02 <rohitpaulk> What's the issue with the quickstart? I could help there.
+14:46:06 <banas> same as last time - I couldn't understand much of what was wrong. Maybe if you're free after dinner, we'll work on it together?
+14:46:18 <rohitpaulk> Sure :)
+14:46:39 <rohitpaulk> Aah there is one more thing I left out - This isn't mentioned in the proposal, but i did say that I'd make the repos directory configurable, haven't done that yet
+14:47:05 <banas> configurable = the renaming you mean?
+14:47:18 <rohitpaulk> I thought it wasn't a priority because it isn't exactly causing us problems - but it is now. My Travis builds are failing, because a "../data" directory doesn't exists
+14:47:28 <rohitpaulk> Yes. Like it's public/data now
+14:47:40 <rohitpaulk> but we should be able to change that :)
+14:47:41 <Emichan> yeah, that's going to be a nice thing to have for different environments
+14:47:48 <rohitpaulk> exist*
+14:48:02 <banas> oh yes, that's useful
+14:48:15 <rohitpaulk> :)
+14:48:29 <rohitpaulk> I was experimenting with a docker image last week
+14:48:56 <Emichan> oh, that'd be a really nice thing to have
+14:49:02 <rohitpaulk> Seems pretty straightforward, I just haven't worked out how to manage the database persistence. As of now - if you push new code, the whole database gets washed out.
+14:49:27 <rohitpaulk> I read that OpenShift is experimenting with Docker already, so thought I'd give it a try :)
+14:50:10 <Emichan> yep, the whole gearD effort
+14:50:49 <rohitpaulk> exactly :) Is that only changing internals, or does it affect the development scenario too? I really couldn't make out much from the information online
+14:51:59 <Emichan> heh, no one's really sure yet ;)
+14:54:14 <rohitpaulk> aah ok :)
+14:54:45 <Emichan> docker is totally the cool new thing though, and it'd be great to have another easy way for people to install GG
+14:54:52 <rohitpaulk> yh :)
+14:55:16 <rohitpaulk> Okay the power is out here, laptop will die anytime - I'll be on phone. :)
+14:55:39 <Emichan> okay
+14:55:45 <Emichan> we should wrap up anyway
+14:56:44 <banas> yep, most of the stuff is discussed :)
+14:56:50 <Emichan> just keep an eye on the time remaining in the program, and try to prioritize your work - anything that's taking a really long time to figure out consider dropping for the time being and moving on, then come back to it if you have time.
+14:57:07 <rohitpaulphone> Sure
+14:57:21 <Emichan> anyone have anything else before we end it?
+14:57:22 <banas> yes, we will :)
+14:58:00 <banas> rohitpaulphone: what time do we meet?
+14:58:02 <Emichan> ending in 3...
+14:58:10 <Emichan> ... 2 ...
+14:58:18 <Emichan> ... 1 ...
+14:58:22 <banas> 0.5 :P
+14:58:23 <Emichan> #endmeeting

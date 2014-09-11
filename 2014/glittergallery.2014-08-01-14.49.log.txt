@@ -1,0 +1,95 @@
+14:49:48 <Emichan> #startmeeting Weekly check-in
+14:49:48 <glitterfox> Meeting started Fri Aug  1 14:49:48 2014 UTC and is due to finish in 60 minutes.  The chair is Emichan. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:49:48 <glitterfox> Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.
+14:49:48 <glitterfox> The meeting name has been set to 'weekly_check_in'
+14:49:56 <banas> yay
+14:50:04 <Emichan> \o/
+14:50:26 <banas> So Waartaa to the rescue today :D
+14:50:48 <rohitpaulk> :D
+14:51:55 <banas> alright, so I guess we should start with the status updates? :) I kind of need to leave early
+14:52:05 <Emichan> yep, let's start
+14:52:17 <Emichan> #topic Sarup status update
+14:52:29 <banas> I've been working on slideshows
+14:53:00 <banas> it's done for most of the part actually
+14:53:28 <banas> there's one problem - the content within the placeholder isn't getting styled, so I'm figuring out what I'm missing
+14:54:02 <banas> glittery-banas was building a while back, so if the assets are good, I can provide a link in a few minutes
+14:54:11 <banas> the off-canvas works too :)
+14:54:41 <banas> for larger devices, nothing changes; for smaller devices, there's a nice slide-in for the navigation
+14:54:52 <banas> I still need to style it further though
+14:55:05 <rohitpaulk> I had a look at the off-canvas nav, looks cool! :)
+14:55:35 <banas> next in place, I'm hoping to improve the notifications front end, if thats good, we're ready 0.1 wise I think
+14:56:28 <banas> that's all for now
+14:56:36 <banas> thanks Paul!
+14:57:46 <Emichan> send out a link when it's done!
+14:57:50 <Emichan> i'd like to see it
+14:57:53 <banas> yep, I will.
+14:58:12 <banas> hopefully, I don't need to change anything for it to work on production properly
+14:59:26 <rohitpaulk> Shall I?
+15:00:03 <banas> as expected, the assets need to be looked after, but here's the general thing http://glittery-banas.rhcloud.com/sarupbanskota/Helloworld
+15:00:09 <banas> rohitpaulk: sure
+15:00:21 <rohitpaulk> #topic Paul status update
+15:00:50 <rohitpaulk> I'm now working on getting tests passed
+15:01:11 <rohitpaulk> Hopefully by tomorrow we'll have all tests passing on Travis
+15:01:30 <rohitpaulk> Once that's done, I'm going to setup emails for notifications
+15:01:52 <rohitpaulk> And the login seems to have magically fixed itself :P
+15:01:57 <rohitpaulk> GitHub login, that is
+15:02:05 <rohitpaulk> It's working now for both me and Sarup
+15:02:35 <Emichan> great
+15:02:39 <rohitpaulk> That's all for now. The issue tracker is functional now, by the way :)
+15:02:46 <Emichan> awesome!
+15:03:27 <Emichan> banas, how much time do you have left
+15:03:44 <banas> for being online?
+15:03:49 <Emichan> yes
+15:04:02 <banas> I can stay, no problem. just that I haven't slept for 2 straight nights
+15:04:08 <banas> and I'm very sleepy :P
+15:04:32 <Emichan> okay, well, let's go to the next topic but try to keep it short so you can sleep
+15:04:41 <banas> yep sure :)
+15:04:42 <Emichan> #topic release criteria
+15:05:15 <Emichan> have you guys had a chance to put together any bugs/feature blockers for 0.1 release?
+15:06:26 <rohitpaulk> Until now I had login on the list. But now that seems to be fixed. (facebook is working too, just checked)
+15:06:50 <banas> I was hoping to do it tomorrow morning actually, since it was my last 2 days in college before the travel.
+15:07:18 <rohitpaulk> I think once we have the emails too, we have a pretty 'useful' app.
+15:07:26 <rohitpaulk> worth a release, i mean.
+15:07:41 <Emichan> banas, did you get the quickstart working? or do you need some help with that?
+15:07:43 <banas> as for my issues, I basically wanted to improve the slider + make the assets work for the slideshow.
+15:07:59 <banas> Emichan: I'll need some help with it :/
+15:08:18 <Emichan> banas, okay - can you open an issue and assign it to me?
+15:08:24 <Emichan> you can do it tomorrow ;)
+15:08:29 <banas> sure, I'll do it!
+15:08:45 <rohitpaulk> And we had some contributor activity yesterday...
+15:08:47 <banas> thank you :) but please do let me know how you went about it, so I can follow as well
+15:08:50 <rohitpaulk> don't know if you noticed
+15:08:56 <rohitpaulk> https://github.com/glittergallery/GlitterGallery/issues/149
+15:08:59 <banas> oh yeah a nokogiri issue yeah?
+15:09:07 <rohitpaulk> yep, exactly
+15:09:38 <Emichan> cool
+15:09:48 <Emichan> more contributors!
+15:10:00 <banas> :D yeah, hopefully he sends in a PR! :)
+15:10:09 <rohitpaulk> :)
+15:10:47 <Emichan> okay, so it sounds like we can have a release ready for the end of GSoC
+15:11:07 <rohitpaulk> definitely
+15:11:12 <banas> yep
+15:12:00 <Emichan> which - just a reminder #info soft pencils down is the 11th
+15:12:18 <Emichan> #info firm p.d. is the 18th
+15:12:34 <Emichan> so there is not a lot of time left, but it sounds like everyone is on track! \o/
+15:12:47 <banas> right :)
+15:12:53 <rohitpaulk> yep :)
+15:13:02 <banas> although, I'd like to mention, I'll be away for a bit for Flock
+15:13:08 <Emichan> just be extra diligent about keeping me informed if you run into any issues - or get blocked by anything
+15:13:17 <Emichan> that's true
+15:13:30 <banas> but I'll make up by 18th, I'm quite confident
+15:13:47 <Emichan> you'll have so much cheap beer to drink in prague! don't have too much fun ;)
+15:14:33 <banas> Emichan: Yeh :D gnokii was telling me!
+15:15:29 <banas> food/beer seems cheaper than it was in germany
+15:16:27 <Emichan> yeah, czech republic is cheaper than germany.
+15:16:55 <Emichan> eastern europe is cheaper than western europe
+15:17:27 <Emichan> prague is gorgeous though - take lots of pictures
+15:17:33 <Emichan> :)
+15:17:33 <banas> i will!
+15:17:53 <banas> btw, anyone from your office going to be at flock?
+15:18:08 <Emichan> okay, i think that wraps it up for this week. Do either of you have any other topics you'd like to bring up, otherwise we can end it
+15:18:15 <rohitpaulk> I've got 15 minutes left to miss my dinner, mind if I scoot? :)
+15:18:17 <Emichan> yep, a bunch of people from my office are going
+15:18:33 <Emichan> go ahead rohitpaulk! bye! talk to you later!
+15:18:36 <banas> rohitpaulk: hehe sure :) i think we can wrap up
+15:18:41 <Emichan> #endmeeting

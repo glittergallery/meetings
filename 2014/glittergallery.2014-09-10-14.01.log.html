@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>#glittergallery log</title>
+<style type="text/css">
+/* For the .log.html */
+pre { /*line-height: 125%;*/
+      white-space: pre-wrap; }
+body { background: #f0f0f0; }
+
+body .tm  { color: #007020 }                      /* time */
+body .nk  { color: #062873; font-weight: bold }   /* nick, regular */
+body .nka { color: #007020; font-weight: bold }  /* action nick */
+body .ac  { color: #00A000 }                      /* action line */
+body .hi  { color: #4070a0 }                 /* hilights */
+/* Things to make particular MeetBot commands stick out */
+body .topic     { color: #007020; font-weight: bold }
+body .topicline { color: #000080; font-weight: bold }
+body .cmd       { color: #007020; font-weight: bold }
+body .cmdline  { font-weight: bold }
+
+</style>
+</head>
+
+<body>
+<pre><a name="l-1"></a><span class="tm">14:01:38</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#startmeeting </span><span class="cmdline">Sept 10 2014 Update</span>
+<a name="l-2"></a><span class="tm">14:01:38</span><span class="nk"> &lt;glitterfox&gt;</span> Meeting started Wed Sep 10 14:01:38 2014 UTC and is due to finish in 60 minutes.  The chair is Emichan. Information about MeetBot at http://wiki.debian.org/MeetBot.
+<a name="l-3"></a><span class="tm">14:01:38</span><span class="nk"> &lt;glitterfox&gt;</span> Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.
+<a name="l-4"></a><span class="tm">14:01:38</span><span class="nk"> &lt;glitterfox&gt;</span> The meeting name has been set to 'sept_10_2014_update'
+<a name="l-5"></a><span class="tm">14:01:48</span><span class="nk"> &lt;Emichan&gt;</span> I always forget it needs a meeting name
+<a name="l-6"></a><span class="tm">14:01:50</span><span class="nk"> &lt;Emichan&gt;</span> :P
+<a name="l-7"></a><span class="tm">14:01:59</span><span class="nk"> &lt;banas&gt;</span> yeh, I've noticed that :P
+<a name="l-8"></a><span class="tm">14:02:09</span><span class="nk"> &lt;banas&gt;</span> <span class="topic">#topic </span><span class="topicline">Introductions</span>
+<a name="l-9"></a><span class="tm">14:02:24</span><span class="nk"> &lt;banas&gt;</span> Just thought we'll let execat introduce himself :)
+<a name="l-10"></a><span class="tm">14:02:49</span><span class="nk"> &lt;execat&gt;</span> Hai people. I am Anuj, handle execat.
+<a name="l-11"></a><span class="tm">14:02:57</span><span class="nk"> &lt;execat&gt;</span> I work at a Rails startup in Mumbai.
+<a name="l-12"></a><span class="tm">14:03:09</span><span class="nk"> &lt;execat&gt;</span> I know Sarup from Rubyconfs mostly :-P
+<a name="l-13"></a><span class="tm">14:03:28</span><span class="nk"> &lt;execat&gt;</span> Also I am a Fedora packager, trying to get involved in more stuff.
+<a name="l-14"></a><span class="tm">14:03:28</span><span class="nk"> &lt;banas&gt;</span> :D
+<a name="l-15"></a><span class="tm">14:03:50</span><span class="nk"> &lt;Emichan&gt;</span> cool! what do you package? ruby stuff?
+<a name="l-16"></a><span class="tm">14:04:18</span><span class="nk"> &lt;execat&gt;</span> I have some Ruby packages, but mostly I just package stuff that's missing.
+<a name="l-17"></a><span class="tm">14:04:29</span><span class="nk"> &lt;execat&gt;</span> Ended with some packages as a co-maintainer.
+<a name="l-18"></a><span class="tm">14:05:04</span><span class="nk"> &lt;execat&gt;</span> I find packaging gems a bit weird, honestly, but I am not getting into holy wars. :-D
+<a name="l-19"></a><span class="tm">14:05:27</span><span class="nk"> &lt;rohitpaulk_&gt;</span> nice to know :) Embibe.com looks great by the way
+<a name="l-20"></a><span class="tm">14:05:29</span><span class="nk"> &lt;Emichan&gt;</span> lol, me too :D
+<a name="l-21"></a><span class="tm">14:05:50</span><span class="nk"> &lt;execat&gt;</span> It's horrible that I have to live with that app. I cry everyday.
+<a name="l-22"></a><span class="tm">14:06:10</span><span class="nk"> &lt;execat&gt;</span> We are in the process of rewriting the app. 100% TDD, Rails 4.1.
+<a name="l-23"></a><span class="tm">14:06:14</span><span class="nk"> &lt;execat&gt;</span> That's fun.
+<a name="l-24"></a><span class="tm">14:06:50</span><span class="nk"> &lt;rohitpaulk_&gt;</span> :)
+<a name="l-25"></a><span class="tm">14:06:53</span><span class="nk"> &lt;banas&gt;</span> yup, so welcome here :)
+<a name="l-26"></a><span class="tm">14:07:12</span><span class="nk"> &lt;Emichan&gt;</span> very welcome! :)
+<a name="l-27"></a><span class="tm">14:07:14</span><span class="nk"> &lt;banas&gt;</span> I think it's been like 3 weeks since we met isn;t it?
+<a name="l-28"></a><span class="tm">14:08:07</span><span class="nk"> &lt;execat&gt;</span> Thanks people.
+<a name="l-29"></a><span class="tm">14:08:28</span><span class="nk"> &lt;execat&gt;</span> Let's start discussing stuff!
+<a name="l-30"></a><span class="tm">14:08:36</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">rohitpaulk_:</span> is your connection all good?
+<a name="l-31"></a><span class="tm">14:08:53</span><span class="nk"> &lt;rohitpaulk&gt;</span> Now it is ;)
+<a name="l-32"></a><span class="tm">14:09:00</span><span class="nk"> &lt;banas&gt;</span> woot.
+<a name="l-33"></a><span class="tm">14:09:48</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">Emichan:</span> should we discuss the release process now?
+<a name="l-34"></a><span class="tm">14:11:03</span><span class="nk"> &lt;Emichan&gt;</span> First, one last bit of GSOC business
+<a name="l-35"></a><span class="tm">14:11:16</span><span class="nk"> &lt;Emichan&gt;</span> <span class="topic">#topic </span><span class="topicline">last GSOC business</span>
+<a name="l-36"></a><span class="tm">14:11:54</span><span class="nk"> &lt;Emichan&gt;</span> The "soft" deadline for code sample submissions is next week, so don't forget to submit your code samples if you haven't already!
+<a name="l-37"></a><span class="tm">14:12:30</span><span class="nk"> &lt;banas&gt;</span> oh yes, I procrastinated for quite some time and eventually ended up submitting recently.
+<a name="l-38"></a><span class="tm">14:12:35</span><span class="nk"> &lt;rohitpaulk&gt;</span> Oh. Thanks for reminding :D
+<a name="l-39"></a><span class="tm">14:12:57</span><span class="nk"> &lt;banas&gt;</span> :D
+<a name="l-40"></a><span class="tm">14:14:10</span><span class="nk"> &lt;Emichan&gt;</span> np - that should be the last GSoC things we have to worry about - at least until next year :)
+<a name="l-41"></a><span class="tm">14:14:23</span><span class="nk"> &lt;Emichan&gt;</span> alright, so now on to the #topic release process
+<a name="l-42"></a><span class="tm">14:14:31</span><span class="nk"> &lt;Emichan&gt;</span> <span class="topic">#topic </span><span class="topicline">release process</span>
+<a name="l-43"></a><span class="tm">14:15:15</span><span class="nk"> &lt;banas&gt;</span> yup, just in case GCI takes place this year, I think now would be a good time to list down easy bugs as well.
+<a name="l-44"></a><span class="tm">14:15:47</span><span class="nk"> &lt;Emichan&gt;</span> execat, we're switching to using a development branch for development, and using the master branch only for releases/hot fixes
+<a name="l-45"></a><span class="tm">14:16:35</span><span class="nk"> &lt;Emichan&gt;</span> so, I created the development branch and tagged the latest master as 0.1
+<a name="l-46"></a><span class="tm">14:17:00</span><span class="nk"> &lt;execat&gt;</span> That's how we do it at work too.
+<a name="l-47"></a><span class="tm">14:17:35</span><span class="nk"> &lt;Emichan&gt;</span> cool. we were just doing all the development in master until now, but we decided to do a release, and switch our process while we're at it :)
+<a name="l-48"></a><span class="tm">14:18:19</span><span class="nk"> &lt;Emichan&gt;</span> banas and rohitpaulk - don't forget to do a pull to update your local repos
+<a name="l-49"></a><span class="tm">14:18:28</span><span class="nk"> &lt;execat&gt;</span> But if everything is tested well and get CI, that might not be needed. I don't know. (Use rspec + jasmine at work)
+<a name="l-50"></a><span class="tm">14:18:31</span><span class="nk"> &lt;execat&gt;</span> Could discuss later.
+<a name="l-51"></a><span class="tm">14:18:35</span><span class="nk"> &lt;rohitpaulk&gt;</span> will do :)
+<a name="l-52"></a><span class="tm">14:19:25</span><span class="nk"> &lt;Emichan&gt;</span> execat, we're still a young/small project so we can definitely try out different processes and see what works best
+<a name="l-53"></a><span class="tm">14:19:30</span><span class="nk"> &lt;Emichan&gt;</span> i'm open to it
+<a name="l-54"></a><span class="tm">14:21:02</span><span class="nk"> &lt;Emichan&gt;</span> for 0.1, we still need to update our landing page with download links
+<a name="l-55"></a><span class="tm">14:21:46</span><span class="nk"> &lt;Emichan&gt;</span> i still need to work on the openshift quickstart
+<a name="l-56"></a><span class="tm">14:21:49</span><span class="nk"> &lt;Emichan&gt;</span> :P
+<a name="l-57"></a><span class="tm">14:22:09</span><span class="nk"> &lt;Emichan&gt;</span> and, we need some documentation about how to run it
+<a name="l-58"></a><span class="tm">14:22:31</span><span class="nk"> &lt;banas&gt;</span> haha yeah. I'll take care of the landing page within this weekend.
+<a name="l-59"></a><span class="tm">14:22:49</span><span class="nk"> &lt;banas&gt;</span> <span class="cmd">#action </span><span class="cmdline">Emichan Work on the OpenShift QuickStart</span>
+<a name="l-60"></a><span class="tm">14:22:52</span><span class="nk"> &lt;Emichan&gt;</span> awesome! if you don't have time, let me know and I'll try to take care of it :)
+<a name="l-61"></a><span class="tm">14:23:00</span><span class="nk"> &lt;rohitpaulk&gt;</span> The documentation to setup on a local machine is up to date, right?
+<a name="l-62"></a><span class="tm">14:23:01</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">banas update landing page</span>
+<a name="l-63"></a><span class="tm">14:23:13</span><span class="nk"> &lt;banas&gt;</span> thanks Emichan.
+<a name="l-64"></a><span class="tm">14:23:14</span><span class="nk"> &lt;rohitpaulk&gt;</span> to run on openshift* sorry
+<a name="l-65"></a><span class="tm">14:23:16</span><span class="nk"> &lt;rohitpaulk&gt;</span> https://github.com/glittergallery/GlitterGallery#run-glittergallery
+<a name="l-66"></a><span class="tm">14:23:36</span><span class="nk"> &lt;banas&gt;</span> yeh, iirc you recently updated it
+<a name="l-67"></a><span class="tm">14:23:59</span><span class="nk"> &lt;Emichan&gt;</span> should be UTD, but I haven't tested it recently
+<a name="l-68"></a><span class="tm">14:24:18</span><span class="nk"> &lt;banas&gt;</span> once Emichan is done with the quicstart, we could add a note about it though
+<a name="l-69"></a><span class="tm">14:24:28</span><span class="nk"> &lt;Emichan&gt;</span> but we should include some basic documentation for how to run it locally, and on a non-openshift server
+<a name="l-70"></a><span class="tm">14:24:35</span><span class="nk"> &lt;rohitpaulk&gt;</span> I'll add the release branches details too. (checkout master for stable, development for stable etc)
+<a name="l-71"></a><span class="tm">14:24:42</span><span class="nk"> &lt;Emichan&gt;</span> cool
+<a name="l-72"></a><span class="tm">14:24:46</span><span class="nk"> &lt;rohitpaulk&gt;</span> Yep
+<a name="l-73"></a><span class="tm">14:24:48</span><span class="nk"> &lt;execat&gt;</span> I am going to run it locally anyway. Might take it up.
+<a name="l-74"></a><span class="tm">14:24:59</span><span class="nk"> &lt;execat&gt;</span> Just have to list steps as I do it.
+<a name="l-75"></a><span class="tm">14:25:11</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">rohitpaulk update branch details</span>
+<a name="l-76"></a><span class="tm">14:25:31</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">execat write up documentation for running locally</span>
+<a name="l-77"></a><span class="tm">14:25:39</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">execat:</span> sure, just mark yourself an action, so we don't all end up working on the same thing
+<a name="l-78"></a><span class="tm">14:26:05</span><span class="nk"> &lt;banas&gt;</span> Hi MarkDude btw!
+<a name="l-79"></a><span class="tm">14:26:23</span><span class="nk"> &lt;MarkDude&gt;</span> Best named channel. /me shuts up now :)
+<a name="l-80"></a><span class="tm">14:26:27</span><span class="nk"> &lt;Emichan&gt;</span> lol
+<a name="l-81"></a><span class="tm">14:26:29</span><span class="nk"> &lt;MarkDude&gt;</span> Hey banas
+<a name="l-82"></a><span class="tm">14:26:54</span><span class="nk"> &lt;Emichan&gt;</span> MarkDude, we're talking about http://www.glittergallery.net/
+<a name="l-83"></a><span class="tm">14:27:01</span><span class="nk"> &lt;Emichan&gt;</span> in case you're not familiar
+<a name="l-84"></a><span class="tm">14:27:10</span><span class="nk"> &lt;banas&gt;</span> haha thanks!
+<a name="l-85"></a><span class="tm">14:27:36</span><span class="nk"> &lt;MarkDude&gt;</span> Hey Emichan - long time no hello :)
+<a name="l-86"></a><span class="tm">14:27:45</span><span class="nk"> &lt;banas&gt;</span> yep, although there might be more info on the wikis, so https://github.com/glittergallery/GlitterGallery/wiki
+<a name="l-87"></a><span class="tm">14:27:50</span><span class="nk"> &lt;MarkDude&gt;</span> Well wow. Never knew about this.
+<a name="l-88"></a><span class="tm">14:27:52</span><span class="nk"> &lt;Emichan&gt;</span> hey MarkDude! it's been too long! :)
+<a name="l-89"></a><span class="tm">14:28:27 </span><span class="nka">* banas</span> <span class="ac">regrets not reminding #fedora-design about the meeting earlier</span>
+<a name="l-90"></a><span class="tm">14:28:30 </span><span class="nka">* MarkDude</span> <span class="ac">took a break . Decided areas of focus. Design is a group for me to keep an eye on - and learn</span>
+<a name="l-91"></a><span class="tm">14:28:43</span><span class="nk"> &lt;MarkDude&gt;</span> Fedocal sucks right now IMO
+<a name="l-92"></a><span class="tm">14:28:52 </span><span class="nka">* MarkDude</span> <span class="ac">gets reminders for meetings</span>
+<a name="l-93"></a><span class="tm">14:28:58</span><span class="nk"> &lt;MarkDude&gt;</span> From 3 days before
+<a name="l-94"></a><span class="tm">14:29:31</span><span class="nk"> &lt;MarkDude&gt;</span> Karsten has called version control- HOW you sleep at night :)
+<a name="l-95"></a><span class="tm">14:30:10 </span><span class="nka">* MarkDude</span> <span class="ac">will read up some more. After meeting- I have Design question :)</span>
+<a name="l-96"></a><span class="tm">14:30:12</span><span class="nk"> &lt;Emichan&gt;</span> yeah, these meetings aren't on fedocal anyway - should probably do that
+<a name="l-97"></a><span class="tm">14:30:27 </span><span class="nka">* banas</span> <span class="ac">remembers a funny discussion around Fedocal from Flock, but it will be OT, so later :p</span>
+<a name="l-98"></a><span class="tm">14:31:02</span><span class="nk"> &lt;banas&gt;</span> actually, it would be helpful to register the channel with fedora infra or however it's done, but maybe not right away
+<a name="l-99"></a><span class="tm">14:33:14</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">at some point register channel with fedora infra and get meetings on fedocal</span>
+<a name="l-100"></a><span class="tm">14:33:31</span><span class="nk"> &lt;Emichan&gt;</span> no one assigned
+<a name="l-101"></a><span class="tm">14:35:16</span><span class="nk"> &lt;banas&gt;</span> I'll try to go over the entire thing and see if there's any features displayed that isn't built/perfect yet
+<a name="l-102"></a><span class="tm">14:35:34</span><span class="nk"> &lt;banas&gt;</span> what other tasks left?
+<a name="l-103"></a><span class="tm">14:36:02</span><span class="nk"> &lt;Emichan&gt;</span> we should do a bug triage, and start prioritizing new features/improvements for the next release
+<a name="l-104"></a><span class="tm">14:37:56</span><span class="nk"> &lt;Emichan&gt;</span> https://github.com/glittergallery/GlitterGallery/issues
+<a name="l-105"></a><span class="tm">14:38:01</span><span class="nk"> &lt;Emichan&gt;</span> we have 28 open issues
+<a name="l-106"></a><span class="tm">14:38:03</span><span class="nk"> &lt;Emichan&gt;</span> some are bugs
+<a name="l-107"></a><span class="tm">14:38:10</span><span class="nk"> &lt;banas&gt;</span> alright, execat have you recently gone through the app locally/ on a demo?
+<a name="l-108"></a><span class="tm">14:38:11</span><span class="nk"> &lt;Emichan&gt;</span> some are feature requests and improvements
+<a name="l-109"></a><span class="tm">14:38:25</span><span class="nk"> &lt;execat&gt;</span> I am doing a bundle install as we speak.
+<a name="l-110"></a><span class="tm">14:38:43</span><span class="nk"> &lt;rohitpaulk&gt;</span> +1. execat: Anything that looks weird to you when starting up - feel free to create issues
+<a name="l-111"></a><span class="tm">14:39:19</span><span class="nk"> &lt;execat&gt;</span> Sure. Is this channel active apart from the meeting days?
+<a name="l-112"></a><span class="tm">14:39:38</span><span class="nk"> &lt;banas&gt;</span> <span class="cmd">#154, </span><span class="cmdline">the one on AJAX comments. I'll try to take it up this weekend if nobody else fixes it earlier :)</span>
+<a name="l-113"></a><span class="tm">14:40:13</span><span class="nk"> &lt;Emichan&gt;</span> execat, no, but banas and I are usually around if you have questions outside of the meetings
+<a name="l-114"></a><span class="tm">14:40:20</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">execat:</span> we're just about 3-4 people, so I'd say not too active.
+<a name="l-115"></a><span class="tm">14:40:24</span><span class="nk"> &lt;rohitpaulk&gt;</span> <span class="hi">execat:</span> Nope, not normally.
+<a name="l-116"></a><span class="tm">14:40:44</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">execat:</span> but that should change, now that it appears people are getting interested :)
+<a name="l-117"></a><span class="tm">14:41:01</span><span class="nk"> &lt;banas&gt;</span> especially after the first release when we have things to fix I guess.
+<a name="l-118"></a><span class="tm">14:41:24</span><span class="nk"> &lt;execat&gt;</span> Is there a projected timeline about how and when things are supposed to happen?
+<a name="l-119"></a><span class="tm">14:41:37</span><span class="nk"> &lt;Emichan&gt;</span> execat, nope - it happens when it happens :)
+<a name="l-120"></a><span class="tm">14:41:45</span><span class="nk"> &lt;Emichan&gt;</span> this is a side project for all of us
+<a name="l-121"></a><span class="tm">14:42:01</span><span class="nk"> &lt;Emichan&gt;</span> now that GSoC is over
+<a name="l-122"></a><span class="tm">14:42:55</span><span class="nk"> &lt;banas&gt;</span> yeh, but not that we'll disappear after GSoC, we're sincere folks ;)
+<a name="l-123"></a><span class="tm">14:43:20 </span><span class="nka">* banas</span> <span class="ac">remembers kushal wanted him to write about it</span>
+<a name="l-124"></a><span class="tm">14:43:42</span><span class="nk"> &lt;Emichan&gt;</span> true, true
+<a name="l-125"></a><span class="tm">14:43:47</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">execat:</span> we'd like to release the basics as soon as possible though.
+<a name="l-126"></a><span class="tm">14:44:09</span><span class="nk"> &lt;banas&gt;</span> once we have a demo that's actually in use by design team, I think we could think of a structure
+<a name="l-127"></a><span class="tm">14:44:18</span><span class="nk"> &lt;execat&gt;</span> By Saturday?
+<a name="l-128"></a><span class="tm">14:45:01</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">execat:</span> unless rohitpaulk or Emichan thinks there are major blockers. I'll be able to take up my issues this Sunday.
+<a name="l-129"></a><span class="tm">14:45:35</span><span class="nk"> &lt;rohitpaulk&gt;</span> The demo is going to be hosted on OpenShift itself, right?
+<a name="l-130"></a><span class="tm">14:45:46</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">rohitpaulk:</span> you mean the one for design team?
+<a name="l-131"></a><span class="tm">14:45:50</span><span class="nk"> &lt;rohitpaulk&gt;</span> Yep
+<a name="l-132"></a><span class="tm">14:46:03</span><span class="nk"> &lt;banas&gt;</span> yes, we'll have to host it on openshift for 2 reasons
+<a name="l-133"></a><span class="tm">14:46:20</span><span class="nk"> &lt;banas&gt;</span> 1) we've been a little biased about it so far, so that's where we know it runs best
+<a name="l-134"></a><span class="tm">14:46:37</span><span class="nk"> &lt;banas&gt;</span> 2) there are no RoR apps in infra at the moment, so they're not very accepting
+<a name="l-135"></a><span class="tm">14:47:40</span><span class="nk"> &lt;MarkDude&gt;</span> Emichan, if you OP me- I can complete registering channel :)
+<a name="l-136"></a><span class="tm">14:48:04</span><span class="nk"> &lt;Emichan&gt;</span> MarkDude, awesome!
+<a name="l-137"></a><span class="tm">14:48:45</span><span class="nk"> &lt;banas&gt;</span> great, that's one task over already :)
+<a name="l-138"></a><span class="tm">14:49:15</span><span class="nk"> &lt;execat&gt;</span> That's how we roll people ;-)
+<a name="l-139"></a><span class="tm">14:49:32</span><span class="nk"> &lt;Emichan&gt;</span> lol
+<a name="l-140"></a><span class="tm">14:49:35</span><span class="nk"> &lt;execat&gt;</span> *roll, people.
+<a name="l-141"></a><span class="tm">14:49:40</span><span class="nk"> &lt;banas&gt;</span> lol :D
+<a name="l-142"></a><span class="tm">14:49:43</span><span class="nk"> &lt;rohitpaulk&gt;</span> haha
+<a name="l-143"></a><span class="tm">14:49:48</span><span class="nk"> &lt;execat&gt;</span> Without the comma it means something totally different.
+<a name="l-144"></a><span class="tm">14:50:35</span><span class="nk"> &lt;MarkDude&gt;</span> :) emichan and mizmo are now +* let me know who else. /me can change Founder to someone else. it just takes a few- but likel no hurry
+<a name="l-145"></a><span class="tm">14:50:50 </span><span class="nka">* MarkDude</span> <span class="ac">thinks of Japanese game with rolling person</span>
+<a name="l-146"></a><span class="tm">14:51:13</span><span class="nk"> &lt;Emichan&gt;</span> MarkDude, what's +* ?
+<a name="l-147"></a><span class="tm">14:51:26 </span><span class="nka">* Emichan</span> <span class="ac">lacks the advanced irc-fu</span>
+<a name="l-148"></a><span class="tm">14:51:35</span><span class="nk"> &lt;execat&gt;</span> Moderator rights, maybe?
+<a name="l-149"></a><span class="tm">14:52:06</span><span class="nk"> &lt;MarkDude&gt;</span> Yes, as well as sme protection. Not likely needed tho
+<a name="l-150"></a><span class="tm">14:52:27</span><span class="nk"> &lt;Emichan&gt;</span> MarkDude, banas too if it's nbd
+<a name="l-151"></a><span class="tm">14:53:08</span><span class="nk"> &lt;MarkDude&gt;</span> We can also do some minor flags for folks. As in setting topics and such. Great way to start a person with admin skills. And not worry about breaking things
+<a name="l-152"></a><span class="tm">14:54:41</span><span class="nk"> &lt;MarkDude&gt;</span> we may need to talk to Freenode folks for this channel. Consider me helping with irc things :)
+<a name="l-153"></a><span class="tm">14:55:01</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">banas:</span> has no idea what's going on either :P
+<a name="l-154"></a><span class="tm">14:55:13</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">MarkDude:</span> any recommended links I can pick up irc-fu from?
+<a name="l-155"></a><span class="tm">14:55:24</span><span class="nk"> &lt;MarkDude&gt;</span> But we own it now. Btw, best guide for irc IMO- https://toxin.jottit.com/freenode_chanserv_commands
+<a name="l-156"></a><span class="tm">14:55:30</span><span class="nk"> &lt;banas&gt;</span> lol, I meant /me has no idea.
+<a name="l-157"></a><span class="tm">14:55:42</span><span class="nk"> &lt;banas&gt;</span> <span class="cmd">#link </span><span class="cmdline">https://toxin.jottit.com/freenode_chanserv_commands</span>
+<a name="l-158"></a><span class="tm">14:55:54</span><span class="nk"> &lt;execat&gt;</span> How long does a typical meet last? I need to rush home now.
+<a name="l-159"></a><span class="tm">14:56:02</span><span class="nk"> &lt;execat&gt;</span> Or in the next 5 minutes.
+<a name="l-160"></a><span class="tm">14:56:07 </span><span class="nka">* MarkDude</span> <span class="ac">just remembers toxin + freenode for Google.</span>
+<a name="l-161"></a><span class="tm">14:56:07</span><span class="nk"> &lt;Emichan&gt;</span> usually an hour
+<a name="l-162"></a><span class="tm">14:56:12</span><span class="nk"> &lt;banas&gt;</span> <span class="hi">execat:</span> we try to finish in an hour, sometime it extends
+<a name="l-163"></a><span class="tm">14:56:19</span><span class="nk"> &lt;Emichan&gt;</span> let's wrap it up
+<a name="l-164"></a><span class="tm">14:56:21</span><span class="nk"> &lt;MarkDude&gt;</span> Do your thing- I have some irc stuff after :)
+<a name="l-165"></a><span class="tm">14:56:31</span><span class="nk"> &lt;Emichan&gt;</span> MarkDude, thanks for all the IRC help! :)
+<a name="l-166"></a><span class="tm">14:56:40</span><span class="nk"> &lt;banas&gt;</span> yep. so execat do look around the app
+<a name="l-167"></a><span class="tm">14:56:50</span><span class="nk"> &lt;banas&gt;</span> report/fix any trivial issues you come across
+<a name="l-168"></a><span class="tm">14:56:55</span><span class="nk"> &lt;execat&gt;</span> Sure.
+<a name="l-169"></a><span class="tm">14:57:07</span><span class="nk"> &lt;banas&gt;</span> and you'll find us here or on #fedora-design or over email :)
+<a name="l-170"></a><span class="tm">14:57:35</span><span class="nk"> &lt;banas&gt;</span> We could focus on taking up an independent module for all of us in the next meeting mayve
+<a name="l-171"></a><span class="tm">14:57:46</span><span class="nk"> &lt;banas&gt;</span> let's focus on releasing something clean first :)
+<a name="l-172"></a><span class="tm">14:58:31</span><span class="nk"> &lt;Emichan&gt;</span> yep, for next week:
+<a name="l-173"></a><span class="tm">14:58:52</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone go through the issues list and close any that are no longer relevant, and add tags as needed</span>
+<a name="l-174"></a><span class="tm">14:59:29</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">everyone add enhancement requests for features and improvements they'd like to see in the next release</span>
+<a name="l-175"></a><span class="tm">14:59:46</span><span class="nk"> &lt;Emichan&gt;</span> and then we can start prioritizing work for the next release at our next meeting
+<a name="l-176"></a><span class="tm">14:59:59</span><span class="nk"> &lt;Emichan&gt;</span> \o/
+<a name="l-177"></a><span class="tm">15:00:13</span><span class="nk"> &lt;rohitpaulk&gt;</span> Yep :)
+<a name="l-178"></a><span class="tm">15:00:21</span><span class="nk"> &lt;Emichan&gt;</span> Anyone have anything else before we shut this down?
+<a name="l-179"></a><span class="tm">15:00:25</span><span class="nk"> &lt;banas&gt;</span> yep, and around when do you think we can get a demo up for design team?
+<a name="l-180"></a><span class="tm">15:00:52</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#action </span><span class="cmdline">Emichan get working demo on openshift for design team to use</span>
+<a name="l-181"></a><span class="tm">15:00:58</span><span class="nk"> &lt;Emichan&gt;</span> I'll try to get that done by next week
+<a name="l-182"></a><span class="tm">15:01:16</span><span class="nk"> &lt;rohitpaulk&gt;</span> <span class="hi">Emichan:</span> Just a heads up, we'll need more resources than the free gears allow. I remember struggling to clean up the demo once, had to create it again in fact
+<a name="l-183"></a><span class="tm">15:01:23</span><span class="nk"> &lt;banas&gt;</span> cool! thanks. you could announce it too i guess and rohitpaulk and i could blog it
+<a name="l-184"></a><span class="tm">15:01:35</span><span class="nk"> &lt;banas&gt;</span> I was just going to raise what rohitpaulk raised
+<a name="l-185"></a><span class="tm">15:01:37</span><span class="nk"> &lt;Emichan&gt;</span> banas, sounds good!
+<a name="l-186"></a><span class="tm">15:01:55</span><span class="nk"> &lt;banas&gt;</span> btw execat you could leave if you're getting late :)
+<a name="l-187"></a><span class="tm">15:01:59</span><span class="nk"> &lt;Emichan&gt;</span> yep, I'll see what I can do wrt getting us some more resources
+<a name="l-188"></a><span class="tm">15:02:04</span><span class="nk"> &lt;banas&gt;</span> I'll email everyone tje logs
+<a name="l-189"></a><span class="tm">15:02:18</span><span class="nk"> &lt;Emichan&gt;</span> banas, thanks! okay #end meeting in 3
+<a name="l-190"></a><span class="tm">15:02:19</span><span class="nk"> &lt;Emichan&gt;</span> ....
+<a name="l-191"></a><span class="tm">15:02:24</span><span class="nk"> &lt;Emichan&gt;</span> 2
+<a name="l-192"></a><span class="tm">15:02:28</span><span class="nk"> &lt;Emichan&gt;</span> ...
+<a name="l-193"></a><span class="tm">15:02:33</span><span class="nk"> &lt;Emichan&gt;</span> 1
+<a name="l-194"></a><span class="tm">15:02:36</span><span class="nk"> &lt;Emichan&gt;</span> ...
+<a name="l-195"></a><span class="tm">15:02:40</span><span class="nk"> &lt;Emichan&gt;</span> <span class="cmd">#endmeeting</span><span class="cmdline"></span></pre>
+</body></html>

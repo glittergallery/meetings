@@ -1,0 +1,195 @@
+14:01:38 <Emichan> #startmeeting Sept 10 2014 Update
+14:01:38 <glitterfox> Meeting started Wed Sep 10 14:01:38 2014 UTC and is due to finish in 60 minutes.  The chair is Emichan. Information about MeetBot at http://wiki.debian.org/MeetBot.
+14:01:38 <glitterfox> Useful Commands: #action #agreed #help #info #idea #link #topic #startvote.
+14:01:38 <glitterfox> The meeting name has been set to 'sept_10_2014_update'
+14:01:48 <Emichan> I always forget it needs a meeting name
+14:01:50 <Emichan> :P
+14:01:59 <banas> yeh, I've noticed that :P
+14:02:09 <banas> #topic Introductions
+14:02:24 <banas> Just thought we'll let execat introduce himself :)
+14:02:49 <execat> Hai people. I am Anuj, handle execat.
+14:02:57 <execat> I work at a Rails startup in Mumbai.
+14:03:09 <execat> I know Sarup from Rubyconfs mostly :-P
+14:03:28 <execat> Also I am a Fedora packager, trying to get involved in more stuff.
+14:03:28 <banas> :D
+14:03:50 <Emichan> cool! what do you package? ruby stuff?
+14:04:18 <execat> I have some Ruby packages, but mostly I just package stuff that's missing.
+14:04:29 <execat> Ended with some packages as a co-maintainer.
+14:05:04 <execat> I find packaging gems a bit weird, honestly, but I am not getting into holy wars. :-D
+14:05:27 <rohitpaulk_> nice to know :) Embibe.com looks great by the way
+14:05:29 <Emichan> lol, me too :D
+14:05:50 <execat> It's horrible that I have to live with that app. I cry everyday.
+14:06:10 <execat> We are in the process of rewriting the app. 100% TDD, Rails 4.1.
+14:06:14 <execat> That's fun.
+14:06:50 <rohitpaulk_> :)
+14:06:53 <banas> yup, so welcome here :)
+14:07:12 <Emichan> very welcome! :)
+14:07:14 <banas> I think it's been like 3 weeks since we met isn;t it?
+14:08:07 <execat> Thanks people.
+14:08:28 <execat> Let's start discussing stuff!
+14:08:36 <banas> rohitpaulk_: is your connection all good?
+14:08:53 <rohitpaulk> Now it is ;)
+14:09:00 <banas> woot.
+14:09:48 <banas> Emichan: should we discuss the release process now?
+14:11:03 <Emichan> First, one last bit of GSOC business
+14:11:16 <Emichan> #topic last GSOC business
+14:11:54 <Emichan> The "soft" deadline for code sample submissions is next week, so don't forget to submit your code samples if you haven't already!
+14:12:30 <banas> oh yes, I procrastinated for quite some time and eventually ended up submitting recently.
+14:12:35 <rohitpaulk> Oh. Thanks for reminding :D
+14:12:57 <banas> :D
+14:14:10 <Emichan> np - that should be the last GSoC things we have to worry about - at least until next year :)
+14:14:23 <Emichan> alright, so now on to the #topic release process
+14:14:31 <Emichan> #topic release process
+14:15:15 <banas> yup, just in case GCI takes place this year, I think now would be a good time to list down easy bugs as well.
+14:15:47 <Emichan> execat, we're switching to using a development branch for development, and using the master branch only for releases/hot fixes
+14:16:35 <Emichan> so, I created the development branch and tagged the latest master as 0.1
+14:17:00 <execat> That's how we do it at work too.
+14:17:35 <Emichan> cool. we were just doing all the development in master until now, but we decided to do a release, and switch our process while we're at it :)
+14:18:19 <Emichan> banas and rohitpaulk - don't forget to do a pull to update your local repos
+14:18:28 <execat> But if everything is tested well and get CI, that might not be needed. I don't know. (Use rspec + jasmine at work)
+14:18:31 <execat> Could discuss later.
+14:18:35 <rohitpaulk> will do :)
+14:19:25 <Emichan> execat, we're still a young/small project so we can definitely try out different processes and see what works best
+14:19:30 <Emichan> i'm open to it
+14:21:02 <Emichan> for 0.1, we still need to update our landing page with download links
+14:21:46 <Emichan> i still need to work on the openshift quickstart
+14:21:49 <Emichan> :P
+14:22:09 <Emichan> and, we need some documentation about how to run it
+14:22:31 <banas> haha yeah. I'll take care of the landing page within this weekend.
+14:22:49 <banas> #action Emichan Work on the OpenShift QuickStart
+14:22:52 <Emichan> awesome! if you don't have time, let me know and I'll try to take care of it :)
+14:23:00 <rohitpaulk> The documentation to setup on a local machine is up to date, right?
+14:23:01 <Emichan> #action banas update landing page
+14:23:13 <banas> thanks Emichan.
+14:23:14 <rohitpaulk> to run on openshift* sorry
+14:23:16 <rohitpaulk> https://github.com/glittergallery/GlitterGallery#run-glittergallery
+14:23:36 <banas> yeh, iirc you recently updated it
+14:23:59 <Emichan> should be UTD, but I haven't tested it recently
+14:24:18 <banas> once Emichan is done with the quicstart, we could add a note about it though
+14:24:28 <Emichan> but we should include some basic documentation for how to run it locally, and on a non-openshift server
+14:24:35 <rohitpaulk> I'll add the release branches details too. (checkout master for stable, development for stable etc)
+14:24:42 <Emichan> cool
+14:24:46 <rohitpaulk> Yep
+14:24:48 <execat> I am going to run it locally anyway. Might take it up.
+14:24:59 <execat> Just have to list steps as I do it.
+14:25:11 <Emichan> #action rohitpaulk update branch details
+14:25:31 <Emichan> #action execat write up documentation for running locally
+14:25:39 <banas> execat: sure, just mark yourself an action, so we don't all end up working on the same thing
+14:26:05 <banas> Hi MarkDude btw!
+14:26:23 <MarkDude> Best named channel. /me shuts up now :)
+14:26:27 <Emichan> lol
+14:26:29 <MarkDude> Hey banas
+14:26:54 <Emichan> MarkDude, we're talking about http://www.glittergallery.net/
+14:27:01 <Emichan> in case you're not familiar
+14:27:10 <banas> haha thanks!
+14:27:36 <MarkDude> Hey Emichan - long time no hello :)
+14:27:45 <banas> yep, although there might be more info on the wikis, so https://github.com/glittergallery/GlitterGallery/wiki
+14:27:50 <MarkDude> Well wow. Never knew about this.
+14:27:52 <Emichan> hey MarkDude! it's been too long! :)
+14:28:27 * banas regrets not reminding #fedora-design about the meeting earlier
+14:28:30 * MarkDude took a break . Decided areas of focus. Design is a group for me to keep an eye on - and learn
+14:28:43 <MarkDude> Fedocal sucks right now IMO
+14:28:52 * MarkDude gets reminders for meetings
+14:28:58 <MarkDude> From 3 days before
+14:29:31 <MarkDude> Karsten has called version control- HOW you sleep at night :)
+14:30:10 * MarkDude will read up some more. After meeting- I have Design question :)
+14:30:12 <Emichan> yeah, these meetings aren't on fedocal anyway - should probably do that
+14:30:27 * banas remembers a funny discussion around Fedocal from Flock, but it will be OT, so later :p
+14:31:02 <banas> actually, it would be helpful to register the channel with fedora infra or however it's done, but maybe not right away
+14:33:14 <Emichan> #action at some point register channel with fedora infra and get meetings on fedocal
+14:33:31 <Emichan> no one assigned
+14:35:16 <banas> I'll try to go over the entire thing and see if there's any features displayed that isn't built/perfect yet
+14:35:34 <banas> what other tasks left?
+14:36:02 <Emichan> we should do a bug triage, and start prioritizing new features/improvements for the next release
+14:37:56 <Emichan> https://github.com/glittergallery/GlitterGallery/issues
+14:38:01 <Emichan> we have 28 open issues
+14:38:03 <Emichan> some are bugs
+14:38:10 <banas> alright, execat have you recently gone through the app locally/ on a demo?
+14:38:11 <Emichan> some are feature requests and improvements
+14:38:25 <execat> I am doing a bundle install as we speak.
+14:38:43 <rohitpaulk> +1. execat: Anything that looks weird to you when starting up - feel free to create issues
+14:39:19 <execat> Sure. Is this channel active apart from the meeting days?
+14:39:38 <banas> #154, the one on AJAX comments. I'll try to take it up this weekend if nobody else fixes it earlier :)
+14:40:13 <Emichan> execat, no, but banas and I are usually around if you have questions outside of the meetings
+14:40:20 <banas> execat: we're just about 3-4 people, so I'd say not too active.
+14:40:24 <rohitpaulk> execat: Nope, not normally.
+14:40:44 <banas> execat: but that should change, now that it appears people are getting interested :)
+14:41:01 <banas> especially after the first release when we have things to fix I guess.
+14:41:24 <execat> Is there a projected timeline about how and when things are supposed to happen?
+14:41:37 <Emichan> execat, nope - it happens when it happens :)
+14:41:45 <Emichan> this is a side project for all of us
+14:42:01 <Emichan> now that GSoC is over
+14:42:55 <banas> yeh, but not that we'll disappear after GSoC, we're sincere folks ;)
+14:43:20 * banas remembers kushal wanted him to write about it
+14:43:42 <Emichan> true, true
+14:43:47 <banas> execat: we'd like to release the basics as soon as possible though.
+14:44:09 <banas> once we have a demo that's actually in use by design team, I think we could think of a structure
+14:44:18 <execat> By Saturday?
+14:45:01 <banas> execat: unless rohitpaulk or Emichan thinks there are major blockers. I'll be able to take up my issues this Sunday.
+14:45:35 <rohitpaulk> The demo is going to be hosted on OpenShift itself, right?
+14:45:46 <banas> rohitpaulk: you mean the one for design team?
+14:45:50 <rohitpaulk> Yep
+14:46:03 <banas> yes, we'll have to host it on openshift for 2 reasons
+14:46:20 <banas> 1) we've been a little biased about it so far, so that's where we know it runs best
+14:46:37 <banas> 2) there are no RoR apps in infra at the moment, so they're not very accepting
+14:47:40 <MarkDude> Emichan, if you OP me- I can complete registering channel :)
+14:48:04 <Emichan> MarkDude, awesome!
+14:48:45 <banas> great, that's one task over already :)
+14:49:15 <execat> That's how we roll people ;-)
+14:49:32 <Emichan> lol
+14:49:35 <execat> *roll, people.
+14:49:40 <banas> lol :D
+14:49:43 <rohitpaulk> haha
+14:49:48 <execat> Without the comma it means something totally different.
+14:50:35 <MarkDude> :) emichan and mizmo are now +* let me know who else. /me can change Founder to someone else. it just takes a few- but likel no hurry
+14:50:50 * MarkDude thinks of Japanese game with rolling person
+14:51:13 <Emichan> MarkDude, what's +* ?
+14:51:26 * Emichan lacks the advanced irc-fu
+14:51:35 <execat> Moderator rights, maybe?
+14:52:06 <MarkDude> Yes, as well as sme protection. Not likely needed tho
+14:52:27 <Emichan> MarkDude, banas too if it's nbd
+14:53:08 <MarkDude> We can also do some minor flags for folks. As in setting topics and such. Great way to start a person with admin skills. And not worry about breaking things
+14:54:41 <MarkDude> we may need to talk to Freenode folks for this channel. Consider me helping with irc things :)
+14:55:01 <banas> banas: has no idea what's going on either :P
+14:55:13 <banas> MarkDude: any recommended links I can pick up irc-fu from?
+14:55:24 <MarkDude> But we own it now. Btw, best guide for irc IMO- https://toxin.jottit.com/freenode_chanserv_commands
+14:55:30 <banas> lol, I meant /me has no idea.
+14:55:42 <banas> #link https://toxin.jottit.com/freenode_chanserv_commands
+14:55:54 <execat> How long does a typical meet last? I need to rush home now.
+14:56:02 <execat> Or in the next 5 minutes.
+14:56:07 * MarkDude just remembers toxin + freenode for Google.
+14:56:07 <Emichan> usually an hour
+14:56:12 <banas> execat: we try to finish in an hour, sometime it extends
+14:56:19 <Emichan> let's wrap it up
+14:56:21 <MarkDude> Do your thing- I have some irc stuff after :)
+14:56:31 <Emichan> MarkDude, thanks for all the IRC help! :)
+14:56:40 <banas> yep. so execat do look around the app
+14:56:50 <banas> report/fix any trivial issues you come across
+14:56:55 <execat> Sure.
+14:57:07 <banas> and you'll find us here or on #fedora-design or over email :)
+14:57:35 <banas> We could focus on taking up an independent module for all of us in the next meeting mayve
+14:57:46 <banas> let's focus on releasing something clean first :)
+14:58:31 <Emichan> yep, for next week:
+14:58:52 <Emichan> #action everyone go through the issues list and close any that are no longer relevant, and add tags as needed
+14:59:29 <Emichan> #action everyone add enhancement requests for features and improvements they'd like to see in the next release
+14:59:46 <Emichan> and then we can start prioritizing work for the next release at our next meeting
+14:59:59 <Emichan> \o/
+15:00:13 <rohitpaulk> Yep :)
+15:00:21 <Emichan> Anyone have anything else before we shut this down?
+15:00:25 <banas> yep, and around when do you think we can get a demo up for design team?
+15:00:52 <Emichan> #action Emichan get working demo on openshift for design team to use
+15:00:58 <Emichan> I'll try to get that done by next week
+15:01:16 <rohitpaulk> Emichan: Just a heads up, we'll need more resources than the free gears allow. I remember struggling to clean up the demo once, had to create it again in fact
+15:01:23 <banas> cool! thanks. you could announce it too i guess and rohitpaulk and i could blog it
+15:01:35 <banas> I was just going to raise what rohitpaulk raised
+15:01:37 <Emichan> banas, sounds good!
+15:01:55 <banas> btw execat you could leave if you're getting late :)
+15:01:59 <Emichan> yep, I'll see what I can do wrt getting us some more resources
+15:02:04 <banas> I'll email everyone tje logs
+15:02:18 <Emichan> banas, thanks! okay #end meeting in 3
+15:02:19 <Emichan> ....
+15:02:24 <Emichan> 2
+15:02:28 <Emichan> ...
+15:02:33 <Emichan> 1
+15:02:36 <Emichan> ...
+15:02:40 <Emichan> #endmeeting
